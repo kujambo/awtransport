@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhwa Al Wathba Transport LLC | Premier Petroleum Transport</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- Custom Dark Theme Styles --- */
+        :root {
+            --primary-green: #2E8B57; /* SeaGreen - Matching your logo tone */
+            --accent-white: #ffffff;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: #e0e0e0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.95) !important;
+            border-bottom: 2px solid var(--primary-green);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-green) !important;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: var(--accent-white) !important;
+        }
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596920286788-b22d1e0281b3?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-white);
+        }
+        .hero span {
+            color: var(--primary-green);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        /* Cards (Services & Stats) */
+        .custom-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .custom-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+        }
+        .icon-box {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: #0a0a0a;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent-white);
+        }
+
+        /* Clients */
+        .client-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .client-item {
+            background: #fff;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 50px 0;
+            border-top: 2px solid var(--primary-green);
+        }
+        .contact-info i {
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ADHWA AL WATHBA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Reliable. Efficient. <span>Safe.</span></h1>
+            <p class="lead">Your premier partner for delivering petroleum products in the GCC region.</p>
+            <a href="#contact" class="btn btn-lg btn-outline-light mt-4" style="border-color: var(--primary-green); color: var(--primary-green);">Get a Quote</a>
+        </div>
+    </header>
+
+    <section id="about" class="stats-section text-center">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Our Vision</h2>
+                    <p class="lead">To be the leading and most trusted transport partner in the region, driving industry growth through innovative, reliable, and sustainable solutions.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="stat-number">38+</div>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="stat-number">42+</div>
+                    <p>Fleet Strength</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="stat-number">65+</div>
+                    <p>Employees in Oman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card text-center">
+                        <i class="fas fa-truck-droplet icon-box"></i>
+                        <h5>Petroleum Transport</h5>
+                        <p class="small">Specialized bulk liquid transport specializing in petroleum products across the GCC.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card text-center">
+                        <i class="fas fa-shield-alt icon-box"></i>
+                        <h5>Safety Programs</h5>
+                        <p class="small">Strict "zero accident" policy with 24/7 GPS tracking and fatigue monitoring.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card text-center">
+                        <i class="fas fa-certificate icon-box"></i>
+                        <h5>Tanker Certification</h5>
+                        <p class="small">Licensed by ROP for tanker inspections and technical certifications.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card text-center">
+                        <i class="fas fa-tools icon-box"></i>
+                        <h5>Maintenance</h5>
+                        <p class="small">Full workshop facilities ensuring our fleet is always road-ready and compliant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="stats-section">
+        <div class="container text-center">
+            <h2>Trusted Partners</h2>
+            <p class="mb-5">Proudly serving major industry leaders.</p>
+            <ul class="client-list">
+                <li class="client-item">Shell Oman</li>
+                <li class="client-item">Halliburton</li>
+                <li class="client-item">Hormuz</li>
+                <li class="client-item">Al Maha Petroleum</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: var(--primary-green);">Adhwa Al Wathba Transport LLC</h3>
+                    <p>Delivering operational excellence in every mile since 1984.</p>
+                </div>
+                <div class="col-md-6 contact-info">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Falaj Ohy Industrial Area, Sohar, Oman</p>
+                    <p><i class="fas fa-phone"></i> +968 95448452 / +968 94215119</p>
+                    <p><i class="fas fa-envelope"></i> awtransports@gmail.com</p>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <small>&copy; 2025 Adhwa Al Wathba Transport LLC. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
