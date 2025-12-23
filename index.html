@@ -7,139 +7,236 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Custom Dark Theme Styles --- */
+        /* --- BRANDING VARIABLES --- */
         :root {
-            --primary-green: #2E8B57; /* SeaGreen - Matching your logo tone */
-            --accent-white: #ffffff;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
+            --primary-green: #00C853; /* Brighter, modern green */
+            --dark-green: #1B5E20;
+            --bg-dark: #0f1115;      /* Deep premium dark */
+            --bg-card: #181b21;      /* Slightly lighter for cards */
+            --text-white: #ffffff;
+            --text-grey: #a0a0a0;
         }
 
+        /* --- GLOBAL STYLES --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-bg);
-            color: #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
         }
 
-        /* Navbar */
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar Glass Effect */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.95) !important;
-            border-bottom: 2px solid var(--primary-green);
+            background-color: rgba(15, 17, 21, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 200, 83, 0.2);
+            padding: 15px 0;
+            transition: all 0.3s;
         }
         .navbar-brand {
-            font-weight: bold;
-            color: var(--primary-green) !important;
+            font-weight: 800;
+            color: var(--text-white) !important;
+            font-size: 1.5rem;
             letter-spacing: 1px;
         }
+        .navbar-brand span {
+            color: var(--primary-green);
+        }
         .nav-link {
-            color: var(--accent-white) !important;
+            color: var(--text-grey) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            transition: color 0.3s;
         }
         .nav-link:hover {
             color: var(--primary-green) !important;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION (PARALLAX) --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596920286788-b22d1e0281b3?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover;
+            /* Parallax Effect */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596920286788-b22d1e0281b3?q=80&w=2070&auto=format&fit=crop'); 
+            background-attachment: fixed;
             background-position: center;
-            height: 90vh;
+            background-size: cover;
+            height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--accent-white);
-        }
-        .hero span {
-            color: var(--primary-green);
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
+            position: relative;
         }
         
-        h2 {
-            color: var(--primary-green);
-            font-weight: bold;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            font-size: 2rem;
+        .hero-content {
+            animation: fadeUp 1.2s ease-out;
+            max-width: 900px;
+            padding: 20px;
         }
 
-        /* Cards (Services & Stats) */
-        .custom-card {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            height: 100%;
-            transition: transform 0.3s;
-        }
-        .custom-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-green);
-        }
-        .icon-box {
-            font-size: 3rem;
-            color: var(--primary-green);
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            line-height: 1.1;
         }
-
-        /* Stats Section */
-        .stats-section {
-            background-color: #0a0a0a;
-        }
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--accent-white);
-        }
-
-        /* Clients */
-        .client-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .client-item {
-            background: #fff;
-            color: #000;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000;
-            padding: 50px 0;
-            border-top: 2px solid var(--primary-green);
-        }
-        .contact-info i {
+        
+        .hero span {
             color: var(--primary-green);
-            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-green);
+            color: #000;
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 200, 83, 0.3);
+        }
+
+        /* --- SECTION STYLING --- */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+            margin: 0 auto;
+        }
+
+        /* --- CARDS (GLASSMORPHISM) --- */
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: #22252b;
+            border-bottom: 4px solid var(--primary-green);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .icon-box {
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .service-card h5 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- STATS SECTION --- */
+        .stats-banner {
+            background-color: var(--dark-green);
+            background-image: linear-gradient(to right, #0f1115, #1B5E20);
+            padding: 60px 0;
+        }
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+        .stat-item p {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #050505;
+            padding-top: 80px;
+            padding-bottom: 30px;
+            border-top: 1px solid #222;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .footer-logo span { color: var(--primary-green); }
+        
+        .footer-contact i {
+            color: var(--primary-green);
+            width: 25px;
+            margin-bottom: 15px;
+        }
+        .footer-contact p {
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero { background-attachment: scroll; } /* Disable parallax on mobile for performance */
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">ADHWA AL WATHBA</a>
+            <a class="navbar-brand" href="#">ADHWA <span>AL WATHBA</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -155,103 +252,147 @@
     </nav>
 
     <header id="home" class="hero">
-        <div class="container">
-            <h1>Reliable. Efficient. <span>Safe.</span></h1>
-            <p class="lead">Your premier partner for delivering petroleum products in the GCC region.</p>
-            <a href="#contact" class="btn btn-lg btn-outline-light mt-4" style="border-color: var(--primary-green); color: var(--primary-green);">Get a Quote</a>
+        <div class="hero-content container">
+            <p style="color: var(--primary-green); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Est. 1984</p>
+            <h1>Reliable. Efficient. <br><span>Absolutely Safe.</span></h1>
+            <p>Your premier partner for delivering petroleum products in the GCC region with unshakeable reliability.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#contact" class="btn btn-custom">Contact Us</a>
+                <a href="#services" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold">View Fleet</a>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="stats-section text-center">
+    <div class="stats-banner">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Our Vision</h2>
-                    <p class="lead">To be the leading and most trusted transport partner in the region, driving industry growth through innovative, reliable, and sustainable solutions.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="stat-number">38+</div>
+            <div class="row text-center">
+                <div class="col-md-4 stat-item mb-4 mb-md-0">
+                    <h3>38+</h3>
                     <p>Years of Excellence</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="stat-number">42+</div>
-                    <p>Fleet Strength</p>
+                <div class="col-md-4 stat-item mb-4 mb-md-0">
+                    <h3>42+</h3>
+                    <p>Active Fleet</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="stat-number">65+</div>
-                    <p>Employees in Oman</p>
+                <div class="col-md-4 stat-item">
+                    <h3>65+</h3>
+                    <p>Team Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1574359411659-15573a278d6b?q=80&w=1974&auto=format&fit=crop" class="img-fluid rounded shadow-lg" alt="Transport Truck">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="section-title text-start">
+                        <h2>Our Vision</h2>
+                        <div class="divider ms-0"></div>
+                    </div>
+                    <p class="lead text-white mb-4">To be the leading and most trusted transport partner in the region.</p>
+                    <p style="color: #aaa;">Adhwa Al Wathba Transport LLC is a premier bulk liquid transport company specializing in petroleum product transportation. With years of experience in the challenging terrain of the GCC, we have built a reputation for unshakeable reliability.</p>
+                    
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 100% Omani Ownership</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> ERP-Supported Operations</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Shell Oman & Halliburton Partners</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
+    <section id="services" style="background-color: #0b0c10;">
         <div class="container">
-            <h2 class="text-center">Our Services</h2>
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <div class="divider"></div>
+            </div>
+            
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
-                    <div class="custom-card text-center">
+                    <div class="service-card text-center">
                         <i class="fas fa-truck-droplet icon-box"></i>
                         <h5>Petroleum Transport</h5>
-                        <p class="small">Specialized bulk liquid transport specializing in petroleum products across the GCC.</p>
+                        <p>Specialized bulk liquid transport specializing in petroleum products across the GCC.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="custom-card text-center">
-                        <i class="fas fa-shield-alt icon-box"></i>
+                    <div class="service-card text-center">
+                        <i class="fas fa-user-shield icon-box"></i>
                         <h5>Safety Programs</h5>
-                        <p class="small">Strict "zero accident" policy with 24/7 GPS tracking and fatigue monitoring.</p>
+                        <p>Strict "zero accident" policy with 24/7 GPS tracking and fatigue monitoring.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="custom-card text-center">
-                        <i class="fas fa-certificate icon-box"></i>
+                    <div class="service-card text-center">
+                        <i class="fas fa-file-contract icon-box"></i>
                         <h5>Tanker Certification</h5>
-                        <p class="small">Licensed by ROP for tanker inspections and technical certifications.</p>
+                        <p>Licensed by ROP for tanker inspections and technical certifications.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="custom-card text-center">
-                        <i class="fas fa-tools icon-box"></i>
-                        <h5>Maintenance</h5>
-                        <p class="small">Full workshop facilities ensuring our fleet is always road-ready and compliant.</p>
+                    <div class="service-card text-center">
+                        <i class="fas fa-wrench icon-box"></i>
+                        <h5>Workshop & Maintenance</h5>
+                        <p>Full workshop facilities ensuring our fleet is always road-ready and compliant.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="clients" class="stats-section">
+    <section id="clients">
         <div class="container text-center">
-            <h2>Trusted Partners</h2>
-            <p class="mb-5">Proudly serving major industry leaders.</p>
-            <ul class="client-list">
-                <li class="client-item">Shell Oman</li>
-                <li class="client-item">Halliburton</li>
-                <li class="client-item">Hormuz</li>
-                <li class="client-item">Al Maha Petroleum</li>
-            </ul>
+            <p class="text-uppercase text-secondary mb-4" style="letter-spacing: 2px;">Trusted By Industry Leaders</p>
+            <div class="row justify-content-center align-items-center opacity-75">
+                <div class="col-6 col-md-3 mb-4">
+                    <h4 class="text-white">SHELL OMAN</h4>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h4 class="text-white">HALLIBURTON</h4>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h4 class="text-white">AL MAHA</h4>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h4 class="text-white">HORMUZ</h4>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h3 style="color: var(--primary-green);">Adhwa Al Wathba Transport LLC</h3>
-                    <p>Delivering operational excellence in every mile since 1984.</p>
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <a href="#" class="footer-logo">ADHWA <span>AL WATHBA</span></a>
+                    <p style="color: #888; max-width: 400px;">Delivering operational excellence in every mile since 1984. We move your business forward safely and efficiently.</p>
                 </div>
-                <div class="col-md-6 contact-info">
-                    <h4>Contact Us</h4>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-decoration-none text-secondary">About Us</a></li>
+                        <li class="mb-2"><a href="#services" class="text-decoration-none text-secondary">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 footer-contact">
+                    <h5 class="text-white mb-4">Contact Info</h5>
                     <p><i class="fas fa-map-marker-alt"></i> Falaj Ohy Industrial Area, Sohar, Oman</p>
-                    <p><i class="fas fa-phone"></i> +968 95448452 / +968 94215119</p>
+                    <p><i class="fas fa-phone"></i> +968 95448452</p>
+                    <p><i class="fas fa-phone"></i> +968 94215119</p>
                     <p><i class="fas fa-envelope"></i> awtransports@gmail.com</p>
                 </div>
             </div>
-            <div class="text-center mt-5">
-                <small>&copy; 2025 Adhwa Al Wathba Transport LLC. All Rights Reserved.</small>
+            <div class="text-center mt-5 pt-4" style="border-top: 1px solid #222;">
+                <p class="small text-secondary mb-0">&copy; 2025 Adhwa Al Wathba Transport LLC. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
